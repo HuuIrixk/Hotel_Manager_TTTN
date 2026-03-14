@@ -40,32 +40,46 @@ export default function Header() {
           <span className="text-2xl"></span>
           <Link
             to="/"
-            className="text-xl font-semibold tracking-wide text-amber-400 hover:text-amber-300 transition"
+            className="text-xl font-semibold tracking-wide text-cyan-400 hover:text-cyan-300 transition"
           >
-            New World Saigon Hotel
+            VAA Hotel
           </Link>
         </div>
 
         {/* Menu ngang (PC) */}
         <nav className="hidden md:flex gap-8 text-sm font-medium">
-          <Link to="/" className="hover:text-amber-400 transition">
+          <Link to="/" className="hover:text-cyan-400 transition">
             Trang chủ
           </Link>
-          <Link to="/services" className="hover:text-amber-400 transition">
+          <Link to="/services" className="hover:text-cyan-400 transition">
             Dịch vụ
           </Link>
-          <Link to="/search" className="hover:text-amber-400 transition">
+          <Link to="/search" className="hover:text-cyan-400 transition">
             Tìm phòng
           </Link>
-          <Link to="/reviews" className="hover:text-amber-400 transition">
+          <Link to="/reviews" className="hover:text-cyan-400 transition">
             Đánh giá
           </Link>
-          <Link to="/about" className="hover:text-amber-400 transition">
+          <Link to="/about" className="hover:text-cyan-400 transition">
             Giới thiệu
           </Link>
-          <Link to="/contact" className="hover:text-amber-400 transition">
+          <Link to="/contact" className="hover:text-cyan-400 transition">
             Liên hệ
           </Link>
+          <button
+            type="button"
+            className="transition inline-flex items-center gap-1 cursor-default"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4"
+            >
+              <path d="M2.25 3a.75.75 0 000 1.5h1.386c.17 0 .318.114.361.278l2.558 9.594a2.25 2.25 0 002.173 1.668h7.884a2.25 2.25 0 002.173-1.668l1.302-4.883A1.875 1.875 0 0018.279 7.5H6.598l-.387-1.451A1.875 1.875 0 004.636 4.5H2.25zm6.75 15a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7.5 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+            </svg>
+            Giỏ hàng
+          </button>
         </nav>
 
         {/* Khu vực auth (PC) */}
@@ -74,13 +88,13 @@ export default function Header() {
             <>
               <Link
                 to="/user"
-                className="text-sm text-gray-100 hover:text-amber-400 transition"
+                className="text-sm text-gray-100 hover:text-cyan-400 transition"
               >
                 Xin chào, {user.username || user.email}
               </Link>
               <button
                 onClick={logout}
-                className="px-4 py-1.5 text-sm rounded-full...amber-400 hover:bg-amber-400 hover:text-black transition-colors"
+                className="px-4 py-1.5 text-sm rounded-full border border-cyan-400 hover:bg-cyan-400 hover:text-black transition-colors"
               >
                 Đăng xuất
               </button>
@@ -89,13 +103,13 @@ export default function Header() {
             <>
               <Link
                 to="/login"
-                className="text-sm hover:text-amber-400 transition"
+                className="text-sm hover:text-cyan-400 transition"
               >
                 Đăng nhập
               </Link>
               <Link
                 to="/register"
-                className="text-sm px-4 py-1.5 rounded-full bg-amber-400 text-black font-semibold hover:bg-amber-300 transition"
+                className="text-sm px-4 py-1.5 rounded-full bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition"
               >
                 Đăng ký
               </Link>
@@ -140,42 +154,48 @@ export default function Header() {
           <ul className="flex flex-col gap-3 text-gray-200 mt-3">
             <Link
               to="/"
-              className="hover:text-amber-400 transition"
+              className="hover:text-cyan-400 transition"
               onClick={() => setMenuOpen(false)}
             >
               Trang chủ
             </Link>
             <Link
               to="/services"
-              className="hover:text-amber-400 transition"
+              className="hover:text-cyan-400 transition"
               onClick={() => setMenuOpen(false)}
             >
               Dịch vụ
             </Link>
             <Link
               to="/search"
-              className="hover:text-amber-400 transition"
+              className="hover:text-cyan-400 transition"
               onClick={() => setMenuOpen(false)}
             >
               Tìm phòng
             </Link>
             <Link
               to="/reviews"
-              className="hover:text-amber-400 transition"
+              className="hover:text-cyan-400 transition"
               onClick={() => setMenuOpen(false)}
             >
               Đánh giá
             </Link>
             <Link
               to="/contact"
-              className="hover:text-amber-400 transition"
+              className="hover:text-cyan-400 transition"
               onClick={() => setMenuOpen(false)}
             >
               Liên hệ
             </Link>
+            <button
+              type="button"
+              className="text-left transition cursor-default"
+            >
+              Giỏ hàng
+            </button>
             <Link
               to="/about"
-              className="hover:text-amber-400 transition"
+              className="hover:text-cyan-400 transition"
               onClick={() => setMenuOpen(false)}
             >
               Giới thiệu
@@ -186,7 +206,7 @@ export default function Header() {
                   <Link
                     to="/user"
                     onClick={() => setMenuOpen(false)}
-                    className="block text-sm mb-2 text-amber-300 hover:text-amber-200 transition"
+                    className="block text-sm mb-2 text-cyan-300 hover:text-cyan-200 transition"
                   >
                     Đang đăng nhập: {user.username || user.email}
                   </Link>
@@ -195,7 +215,7 @@ export default function Header() {
                       logout()
                       setMenuOpen(false)
                     }}
-                    className="w-full py-2 rounded-lg border-2 border-black bg-amber-400 text-black text-sm font-semibold hover:bg-amber-300 transition"
+                    className="w-full py-2 rounded-lg border-2 border-black bg-cyan-400 text-black text-sm font-semibold hover:bg-cyan-300 transition"
                   >
                     Đăng xuất
                   </button>
@@ -205,14 +225,14 @@ export default function Header() {
                   <Link
                     to="/login"
                     onClick={() => setMenuOpen(false)}
-                    className="block w-full py-2 rounded-lg bg-amber-400 text-black text-sm font-medium text-center hover:bg-amber-300 transition"
+                    className="block w-full py-2 rounded-lg bg-cyan-400 text-black text-sm font-medium text-center hover:bg-cyan-300 transition"
                   >
                     Đăng nhập
                   </Link>
                   <Link
                     to="/register"
                     onClick={() => setMenuOpen(false)}
-                    className="block w-full border border-amber-400 text-amber-400 text-sm font-medium py-2 rounded-lg hover:bg-amber-500 hover:text-black transition text-center mt-2"
+                    className="block w-full border border-cyan-400 text-cyan-400 text-sm font-medium py-2 rounded-lg hover:bg-cyan-500 hover:text-black transition text-center mt-2"
                   >
                     Đăng ký
                   </Link>

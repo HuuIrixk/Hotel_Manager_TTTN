@@ -40,7 +40,7 @@ exports.searchRooms = async (req, res) => {
     const whereRoom = {}
 
     if (type) {
-      // nhớ: giá trị type phải khớp DB, ví dụ 'Standard', 'VIP', 'Family'
+      // nhớ: giá trị type phải khớp DB, ví dụ 'Standard', 'VIP', 'Suite'
       whereRoom.type = type
     }
 

@@ -24,7 +24,7 @@ function ThemeToggleButton({ theme, toggleTheme }) {
           : 'bg-slate-900/90 border border-slate-600 text-slate-100 hover:bg-slate-800')
       }
     >
-      {/* <span className="w-2.5 h-2.5 rounded-full bg-amber-400" /> */}
+      {/* <span className="w-2.5 h-2.5 rounded-full bg-cyan-400" /> */}
       <span>
         {isLight ? 'Chuyển sang chế độ tối' : 'Chuyển sang chế độ sáng'}
       </span>
@@ -396,7 +396,7 @@ export default function UserPage() {
                 <>
                   <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-amber-500/10 border border-amber-400 flex items-center justify-center text-xl md:text-2xl font-semibold text-amber-600">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-cyan-500/10 border border-cyan-400 flex items-center justify-center text-xl md:text-2xl font-semibold text-cyan-600">
                         {(profile.username || profile.email || 'U')
                           .trim()
                           .charAt(0)
@@ -467,7 +467,7 @@ export default function UserPage() {
                     <button
                       type="button"
                       onClick={openEditModal}
-                      className="px-5 py-2 rounded-md bg-amber-500 hover:bg-amber-400 text-sm font-semibold text-black"
+                      className="px-5 py-2 rounded-md bg-cyan-500 hover:bg-cyan-400 text-sm font-semibold text-black"
                     >
                       Thay đổi thông tin
                     </button>
@@ -507,7 +507,7 @@ export default function UserPage() {
                       let badgeClass =
                         'bg-slate-200 text-slate-700 border-slate-300'
                       if (b.status === 'pending')
-                        badgeClass = 'bg-amber-100 text-amber-700 border-amber-200'
+                        badgeClass = 'bg-cyan-100 text-cyan-700 border-cyan-200'
                       if (b.status === 'confirmed')
                         badgeClass = 'bg-sky-100 text-sky-700 border-sky-200'
                       if (b.status === 'completed')
@@ -523,7 +523,7 @@ export default function UserPage() {
                           onClick={() => setSelectedBookingId(b.booking_id)}
                           className={`w-full text-left rounded-lg border px-3 py-2 text-sm flex items-start gap-3 ${
                             isActive
-                              ? 'border-amber-400 bg-amber-50'
+                              ? 'border-cyan-400 bg-cyan-50'
                               : 'border-slate-200 bg-white hover:bg-slate-50'
                           }`}
                         >
@@ -548,7 +548,7 @@ export default function UserPage() {
                             <p className="text-xs text-slate-600 mt-0.5">
                               {formatDate(b.check_in)} →{' '}
                               {formatDate(b.check_out)} ·{' '}
-                              <span className="text-amber-600">
+                              <span className="text-cyan-600">
                                 {calcNights(b)} đêm
                               </span>
                             </p>
@@ -606,7 +606,7 @@ export default function UserPage() {
                       </p>
                       <p className="flex justify-between font-semibold pt-1">
                         <span>Tạm tính</span>
-                        <span className="text-amber-600">
+                        <span className="text-cyan-600">
                           {formatCurrency(
                             calcNights(selectedBooking) *
                               (selectedBooking.Room?.price || 0)
@@ -633,7 +633,7 @@ export default function UserPage() {
                     </div>
 
                     {bookingActionMessage && (
-                      <p className="text-xs text-amber-600 mt-1">
+                      <p className="text-xs text-cyan-600 mt-1">
                         {bookingActionMessage}
                       </p>
                     )}
@@ -672,7 +672,7 @@ export default function UserPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                   value={editFullName}
                   onChange={(e) => setEditFullName(e.target.value)}
                 />
@@ -683,7 +683,7 @@ export default function UserPage() {
                 </label>
                 <input
                   type="email"
-                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                   value={editEmail}
                   onChange={(e) => setEditEmail(e.target.value)}
                 />
@@ -694,7 +694,7 @@ export default function UserPage() {
                 </label>
                 <input
                   type="tel"
-                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                   value={editPhone}
                   onChange={(e) => setEditPhone(e.target.value)}
                 />
@@ -716,7 +716,7 @@ export default function UserPage() {
                 <button
                   type="submit"
                   disabled={editSubmitting}
-                  className="px-5 py-2 rounded-md bg-amber-500 hover:bg-amber-400 text-xs font-semibold text-black"
+                  className="px-5 py-2 rounded-md bg-cyan-500 hover:bg-cyan-400 text-xs font-semibold text-black"
                 >
                   {editSubmitting ? 'Đang lưu...' : 'Lưu thay đổi'}
                 </button>
@@ -742,7 +742,7 @@ export default function UserPage() {
                 </label>
                 <input
                   type="password"
-                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
                 />
@@ -753,7 +753,7 @@ export default function UserPage() {
                 </label>
                 <input
                   type="password"
-                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                 />
@@ -764,7 +764,7 @@ export default function UserPage() {
                 </label>
                 <input
                   type="password"
-                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                  className="w-full border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
@@ -791,7 +791,7 @@ export default function UserPage() {
                 <button
                   type="submit"
                   disabled={passwordSubmitting}
-                  className="px-5 py-2 rounded-md bg-amber-500 hover:bg-amber-400 text-xs font-semibold text-black"
+                  className="px-5 py-2 rounded-md bg-cyan-500 hover:bg-cyan-400 text-xs font-semibold text-black"
                 >
                   {passwordSubmitting ? 'Đang cập nhật...' : 'Cập nhật'}
                 </button>

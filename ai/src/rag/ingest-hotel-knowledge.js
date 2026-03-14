@@ -56,7 +56,7 @@ async function main() {
   const firstLine = trimmed.split('\n').find((l) => l.trim());
   let title =
     firstLine?.replace(/^Tên hệ thống:\s*/i, '').trim() ||
-    'Hotel Manager – New World Saigon Hotel';
+    'Hotel Manager – VAA Hotel';
 
   const source = 'seed';
 

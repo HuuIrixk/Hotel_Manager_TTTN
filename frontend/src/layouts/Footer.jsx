@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold mb-4">Về chúng tôi</h3>
             <p className="text-sm text-white/70">
-              New World Saigon Hotel - Khách sạn 5 sao tiêu chuẩn quốc tế tại trung tâm Sài Gòn.
+              VAA Hotel - Khách sạn 5 sao tiêu chuẩn quốc tế tại trung tâm Sài Gòn.
             </p>
           </div>
 
@@ -15,7 +15,7 @@ export default function Footer() {
             <ul className="text-sm text-white/70 space-y-2">
               <li>18A, Cộng Hòa, Quận Tân Bình, TP.HCM</li>
               <li>Tel: (84-28) 3822 8888</li>
-              <li>Email: Nhom10@newworldsaigon.VAA.com</li>
+              <li>Email: nhom86@vaa.com</li>
             </ul>
           </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          © 2025 New World Saigon Hotel. All rights reserved.
+          © 2025 VAA Hotel. All rights reserved.
         </div>
       </div>
     </footer>

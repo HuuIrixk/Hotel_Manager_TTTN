@@ -115,7 +115,7 @@ export default function RoomSection() {
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-500 mb-1">Giá từ</p>
-                    <p className="text-xl font-bold text-amber-500">
+                    <p className="text-xl font-bold text-cyan-500">
                       {formatPrice(room.price)}
                     </p>
                     <p className="text-xs text-gray-500">/ đêm</p>

@@ -83,7 +83,7 @@ export default function RoomDetailPage() {
         <section className="grid md:grid-cols-2 gap-10 items-start">
           {/* Cột ảnh */}
           <div data-aos="fade-right" className="space-y-4">
-            <div className="overflow-hidden rounded-3xl shadow-[0_0_40px_rgba(251,191,36,0.25)] w-full h-[320px] md:h-[380px] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+            <div className="overflow-hidden rounded-3xl shadow-[0_0_40px_rgba(34,211,238,0.25)] w-full h-[320px] md:h-[380px] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
               {roomImg ? (
                 <img
                   src={roomImg}
@@ -100,7 +100,7 @@ export default function RoomDetailPage() {
 
           {/* Cột thông tin */}
           <div data-aos="fade-left" className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-amber-400">
+            <h1 className="text-3xl md:text-4xl font-bold text-cyan-400">
               Phòng {room.room_number || room.room_id}
             </h1>
 
@@ -133,7 +133,7 @@ export default function RoomDetailPage() {
             {room.status === 'available' && (
               <button
                 onClick={handleBook}
-                className="mt-6 px-10 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-full shadow-[0_0_25px_rgba(251,191,36,0.6)] hover:shadow-[0_0_35px_rgba(251,191,36,0.9)] transition-all duration-300"
+                className="mt-6 px-10 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-black font-semibold rounded-full shadow-[0_0_25px_rgba(34,211,238,0.6)] hover:shadow-[0_0_35px_rgba(34,211,238,0.9)] transition-all duration-300"
               >
                 Đặt phòng ngay
               </button>

@@ -1,5 +1,6 @@
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
 exports.login = async (req, res) => {
@@ -12,8 +13,13 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: "Sai tài khoản hoặc mật khẩu" });
     }
 
-    // 2. Kiểm tra password (tạm thời plain-text vì chưa có bcrypt)
-    if (user.password !== password) {
+    // 2. Kiểm tra password: ưu tiên bcrypt hash, fallback plain-text cho dữ liệu cũ
+    const isHash = typeof user.password === "string" && user.password.startsWith("$2");
+    const isValidPassword = isHash
+      ? await bcrypt.compare(password, user.password)
+      : user.password === password;
+
+    if (!isValidPassword) {
       return res.status(401).json({ message: "Sai tài khoản hoặc mật khẩu" });
     }
 

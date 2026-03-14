@@ -48,7 +48,7 @@ export default function ServicesPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    document.title = "Dịch vụ | New World Saigon Hotel";
+    document.title = "Dịch vụ | VAA Hotel";
   }, []);
 
   useEffect(() => {
@@ -67,14 +67,14 @@ export default function ServicesPage() {
         className="relative z-10 text-center pt-32 pb-20 px-6"
         data-aos="fade-down"
       >
-        <h1 className="text-5xl md:text-6xl font-[Playfair_Display] font-bold text-amber-400 drop-shadow-[0_2px_10px_rgba(251,191,36,0.6)]">
+        <h1 className="text-5xl md:text-6xl font-[Playfair_Display] font-bold text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.6)]">
           Dịch vụ đẳng cấp
         </h1>
         <p className="max-w-2xl mx-auto mt-6 text-gray-300 text-lg leading-relaxed">
           Trải nghiệm sự khác biệt từ chất lượng phục vụ, tận hưởng từng khoảnh khắc
           sang trọng và đẳng cấp tại{' '}
-          <span className="text-amber-400 font-semibold">
-            New World Saigon Hotel
+          <span className="text-cyan-400 font-semibold">
+            VAA Hotel
           </span>
           .
         </p>
@@ -87,7 +87,7 @@ export default function ServicesPage() {
             key={i}
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            className="group bg-white/10 backdrop-blur-md border border-amber-400/20 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:shadow-[0_0_35px_rgba(251,191,36,0.3)] transition-all duration-500"
+            className="group bg-white/10 backdrop-blur-md border border-cyan-400/20 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:shadow-[0_0_35px_rgba(34,211,238,0.3)] transition-all duration-500"
           >
             <div className="h-60 overflow-hidden">
               <img
@@ -97,7 +97,7 @@ export default function ServicesPage() {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-semibold text-amber-400 mb-3">
+              <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
                 {s.title}
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">{s.desc}</p>
@@ -108,15 +108,15 @@ export default function ServicesPage() {
 
       {/* CTA cuối trang */}
       <section
-        className="relative z-10 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 backdrop-blur-md text-center py-20 border-t border-amber-400/30"
+        className="relative z-10 bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 backdrop-blur-md text-center py-20 border-t border-cyan-400/30"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl md:text-4xl font-[Playfair_Display] text-amber-400 mb-6">
+        <h2 className="text-3xl md:text-4xl font-[Playfair_Display] text-cyan-400 mb-6">
           Liên hệ ngay để trải nghiệm dịch vụ 5 sao
         </h2>
         <button
           onClick={() => navigate('/contact')}
-          className="px-10 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(251,191,36,0.5)] transition-all duration-300"
+          className="px-10 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300"
         >
           Đặt dịch vụ ngay
         </button>

@@ -62,14 +62,14 @@ export default function BookingResultPage() {
 
       <main className="relative z-10 pt-32 pb-24 container mx-auto px-6 flex flex-col items-center">
         <h1
-          className="text-4xl md:text-5xl font-[Playfair_Display] font-bold mb-8 text-amber-400 drop-shadow-[0_2px_10px_rgba(251,191,36,0.5)]"
+          className="text-4xl md:text-5xl font-[Playfair_Display] font-bold mb-8 text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.5)]"
           data-aos="fade-down"
         >
           Kết quả thanh toán
         </h1>
 
         <div
-          className="w-full max-w-2xl bg-white/10 backdrop-blur-lg border border-amber-400/20 rounded-2xl p-8 shadow-[0_0_25px_rgba(251,191,36,0.15)]"
+          className="w-full max-w-2xl bg-white/10 backdrop-blur-lg border border-cyan-400/20 rounded-2xl p-8 shadow-[0_0_25px_rgba(34,211,238,0.15)]"
           data-aos="fade-up"
         >
           <div className="mb-6">
@@ -86,7 +86,7 @@ export default function BookingResultPage() {
             {amount && (
               <p className="text-sm text-gray-300 mb-1">
                 Tổng số tiền:{' '}
-                <span className="font-semibold text-amber-300">
+                <span className="font-semibold text-cyan-300">
                   {formatCurrency(amount)}
                 </span>
               </p>
@@ -130,7 +130,7 @@ export default function BookingResultPage() {
 
             <Link
               to="/user"
-              className="w-full md:w-auto text-center px-6 py-3 rounded-full bg-amber-400 hover:bg-amber-500 text-sm font-semibold text-black transition"
+              className="w-full md:w-auto text-center px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-500 text-sm font-semibold text-black transition"
             >
               Xem lịch sử đặt phòng
             </Link>

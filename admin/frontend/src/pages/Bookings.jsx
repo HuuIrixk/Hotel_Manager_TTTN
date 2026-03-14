@@ -88,8 +88,22 @@ export default function Bookings() {
                   <td>{b.customerName}</td>
                   <td>{room?.name}</td>
                   <td>{b.checkIn} → {b.checkOut}</td>
-                  <td style={{ fontWeight: 700, color: b.status === "approved" ? "#10b981" : (b.status === "rejected" ? "#ef4444" : "#f59e0b") }}>
-                    {b.status.toUpperCase()}
+                  <td
+                    style={{
+                      fontWeight: 700,
+                      color:
+                        b.status === "approved"
+                          ? "#10b981"
+                          : b.status === "rejected"
+                          ? "#ef4444"
+                          : b.status === "cancelled" || b.status === "occupied"
+                          ? "#facc15"
+                          : "#06b6d4",
+                    }}
+                  >
+                    {String(
+                      b.status === "occupied" ? "booked" : b.status || ""
+                    ).toUpperCase()}
                   </td>
                 </tr>
               );

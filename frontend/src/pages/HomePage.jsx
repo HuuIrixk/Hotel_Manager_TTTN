@@ -31,7 +31,7 @@ function SuggestedRoomCard({ room, onBook, onViewDetail, isLight }) {
         'rounded-2xl overflow-hidden flex flex-col shadow-sm border transition hover:-translate-y-1 hover:shadow-lg ' +
         (isLight
           ? 'bg-white border-slate-200'
-          : 'bg-white/5 border-amber-400/20')
+          : 'bg-white/5 border-cyan-400/20')
       }
     >
       {/* Ảnh phòng */}
@@ -60,7 +60,7 @@ function SuggestedRoomCard({ room, onBook, onViewDetail, isLight }) {
         <h2
           className={
             'font-semibold ' +
-            (isLight ? 'text-slate-900' : 'text-amber-300')
+            (isLight ? 'text-slate-900' : 'text-cyan-300')
           }
         >
           Phòng {room.room_number || room.room_id}
@@ -88,7 +88,7 @@ function SuggestedRoomCard({ room, onBook, onViewDetail, isLight }) {
           }
         >
           Giá:{' '}
-          <span className="font-semibold text-amber-500">
+          <span className="font-semibold text-cyan-500">
             {room.price
               ? `${Number(room.price).toLocaleString('vi-VN')} đ / đêm`
               : 'Liên hệ'}
@@ -111,7 +111,7 @@ function SuggestedRoomCard({ room, onBook, onViewDetail, isLight }) {
           <button
             type="button"
             onClick={() => onBook(room)}
-            className="text-sm font-semibold text-black bg-gradient-to-r from-amber-400 to-yellow-500 px-3 py-1.5 rounded-full hover:scale-105 hover:shadow-[0_0_15px_rgba(251,191,36,0.6)] transition"
+            className="text-sm font-semibold text-black bg-gradient-to-r from-cyan-400 to-cyan-500 px-3 py-1.5 rounded-full hover:scale-105 hover:shadow-[0_0_15px_rgba(34,211,238,0.6)] transition"
           >
             Đặt phòng
           </button>
@@ -121,7 +121,7 @@ function SuggestedRoomCard({ room, onBook, onViewDetail, isLight }) {
             onClick={() => onViewDetail(room)}
             className={
               'text-sm underline ' +
-              (isLight ? 'text-slate-600 hover:text-amber-500' : 'text-gray-200 hover:text-amber-300')
+              (isLight ? 'text-slate-600 hover:text-cyan-500' : 'text-gray-200 hover:text-cyan-300')
             }
           >
             Xem chi tiết
@@ -148,7 +148,7 @@ export default function HomePage() {
   const [suggestError, setSuggestError] = useState('')
 
   useEffect(() => {
-    document.title = 'Trang chủ | New World Saigon Hotel'
+    document.title = 'Trang chủ | VAA Hotel'
   }, [])
 
   // Lấy gợi ý phòng từ DB (chưa dùng AI)
@@ -232,13 +232,13 @@ export default function HomePage() {
         <div className="absolute left-0 right-0 bottom-12 flex justify-center z-30">
           <form
             onSubmit={handleSearch}
-            className="hero-search-card bg-white/10 backdrop-blur-md border border-amber-400/40 rounded-2xl shadow-xl px-6 py-4 flex flex-col sm:flex-row gap-4 items-center w-[90%] max-w-4xl"
+            className="hero-search-card bg-white/10 backdrop-blur-md border border-cyan-400/40 rounded-2xl shadow-xl px-6 py-4 flex flex-col sm:flex-row gap-4 items-center w-[90%] max-w-4xl"
           >
             {/* Ngày đến */}
             <div className="flex items-center gap-3 flex-1 w-full">
               <div className="flex flex-1 flex-col">
                 <div className="flex flex-row items-center justify-start gap-2 mb-[5px]">
-                  <FaCalendar className="w-5 h-5 text-amber-400" />
+                  <FaCalendar className="w-5 h-5 text-cyan-400" />
                   <div className="text-sm text-gray-200 leading-none">
                     Ngày đến
                   </div>
@@ -256,7 +256,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 flex-1 w-full">
               <div className="flex flex-1 flex-col">
                 <div className="flex flex-row items-center justify-start gap-2 mb-[5px]">
-                  <FaCalendar className="w-5 h-5 text-amber-400" />
+                  <FaCalendar className="w-5 h-5 text-cyan-400" />
                   <div className="text-sm text-gray-200 leading-none">
                     Ngày đi
                   </div>
@@ -274,7 +274,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <div className="flex flex-1 flex-col">
                 <div className="flex flex-row items-center justify-start gap-2 mb-[5px]">
-                  <HiUsers className="w-5 h-5 text-amber-400" />
+                  <HiUsers className="w-5 h-5 text-cyan-400" />
                   <div className="text-sm text-gray-200 leading-none">
                     Số khách
                   </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
 
             <button
               type="submit"
-              className="luxury-button bg-amber-500 hover:bg-amber-400 text-black px-6 py-2 rounded-lg font-medium"
+              className="luxury-button bg-cyan-500 hover:bg-cyan-400 text-black px-6 py-2 rounded-lg font-medium"
             >
               Tìm phòng
             </button>
@@ -321,7 +321,7 @@ export default function HomePage() {
               className={
                 'inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-semibold transition ' +
                 (isLight
-                  ? 'border-amber-600 text-amber-600 hover:bg-amber-50'
+                  ? 'border-cyan-600 text-cyan-600 hover:bg-cyan-50'
                   : 'border-white/60 text-white hover:bg-white/10')
               }
             >

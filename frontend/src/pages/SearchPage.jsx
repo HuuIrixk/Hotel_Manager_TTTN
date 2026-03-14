@@ -128,13 +128,13 @@ export default function SearchPage() {
       <main className="relative z-10 max-w-6xl mx-auto px-4 pt-32 pb-24 space-y-10">
         {/* Hero */}
         <section className="text-center mb-4">
-          <h1 className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-amber-400 drop-shadow-[0_2px_10px_rgba(251,191,36,0.6)]">
+          <h1 className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.6)]">
             Tìm phòng khách sạn
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Chọn ngày lưu trú và điều kiện phù hợp để tìm phòng{' '}
-            <span className="text-amber-400 font-semibold">
-              New World Saigon Hotel
+            <span className="text-cyan-400 font-semibold">
+              VAA Hotel
             </span>{' '}
             dành riêng cho bạn.
           </p>
@@ -143,7 +143,7 @@ export default function SearchPage() {
         {/* Bộ lọc */}
         <form
           onSubmit={handleSearch}
-          className="bg-white/10 backdrop-blur-md border border-amber-400/20 rounded-2xl shadow-[0_0_25px_rgba(15,23,42,0.6)] p-4 md:p-6 space-y-4"
+          className="bg-white/10 backdrop-blur-md border border-cyan-400/20 rounded-2xl shadow-[0_0_25px_rgba(15,23,42,0.6)] p-4 md:p-6 space-y-4"
         >
           <div className="grid md:grid-cols-4 gap-4">
             <div>
@@ -154,12 +154,12 @@ export default function SearchPage() {
                 name="type"
                 value={filters.type}
                 onChange={handleChange}
-                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
               >
                 <option value="">Tất cả</option>
                 <option value="Standard">Standard</option>
                 <option value="VIP">VIP</option>
-                <option value="Family">Family</option>
+                <option value="Suite">Suite</option>
               </select>
             </div>
 
@@ -172,7 +172,7 @@ export default function SearchPage() {
                 name="minPrice"
                 value={filters.minPrice}
                 onChange={handleChange}
-                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
                 min={0}
                 placeholder="Ví dụ: 1.000.000"
               />
@@ -187,7 +187,7 @@ export default function SearchPage() {
                 name="maxPrice"
                 value={filters.maxPrice}
                 onChange={handleChange}
-                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
                 min={0}
                 placeholder="Ví dụ: 3.000.000"
               />
@@ -202,7 +202,7 @@ export default function SearchPage() {
                 name="capacity"
                 value={filters.capacity}
                 onChange={handleChange}
-                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
                 min={1}
                 placeholder="Ví dụ: 2"
               />
@@ -219,7 +219,7 @@ export default function SearchPage() {
                 name="checkIn"
                 value={filters.checkIn}
                 onChange={handleChange}
-                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
               />
             </div>
             <div>
@@ -231,7 +231,7 @@ export default function SearchPage() {
                 name="checkOut"
                 value={filters.checkOut}
                 onChange={handleChange}
-                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+                className="w-full rounded-lg bg-black/30 border border-white/20 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
               />
             </div>
           </div>
@@ -246,7 +246,7 @@ export default function SearchPage() {
             <button
               type="submit"
               disabled={loading}
-              className="px-10 py-2.5 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 font-semibold text-black shadow-[0_18px_35px_rgba(251,191,36,0.55)] hover:shadow-[0_22px_45px_rgba(251,191,36,0.8)] transition-all duration-300 disabled:opacity-60"
+              className="px-10 py-2.5 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 font-semibold text-black shadow-[0_18px_35px_rgba(34,211,238,0.55)] hover:shadow-[0_22px_45px_rgba(34,211,238,0.8)] transition-all duration-300 disabled:opacity-60"
             >
               {loading ? 'Đang tìm...' : 'Tìm phòng phù hợp'}
             </button>
@@ -266,7 +266,7 @@ export default function SearchPage() {
             {rooms.map((room) => (
               <div
                 key={room.room_id}
-                className="bg-white/10 backdrop-blur-md border border-amber-400/20 rounded-xl overflow-hidden flex flex-col shadow-[0_0_20px_rgba(15,23,42,0.8)]"
+                className="bg-white/10 backdrop-blur-md border border-cyan-400/20 rounded-xl overflow-hidden flex flex-col shadow-[0_0_20px_rgba(15,23,42,0.8)]"
               >
                 <div className="w-full h-40 bg-slate-200/20 overflow-hidden flex items-center justify-center">
                   {room.image_url ? (
@@ -287,7 +287,7 @@ export default function SearchPage() {
                 </div>
 
                 <div className="p-4 space-y-1 flex-1 flex flex-col">
-                  <h2 className="font-semibold text-amber-300">
+                  <h2 className="font-semibold text-cyan-300">
                     Phòng {room.room_number || room.room_id}
                   </h2>
                   <p className="text-sm text-gray-200">
@@ -306,7 +306,7 @@ export default function SearchPage() {
                   <div className="mt-3 flex gap-4">
                     <button
                       onClick={() => handleBook(room)}
-                      className="text-sm font-semibold text-amber-400 underline"
+                      className="text-sm font-semibold text-cyan-400 underline"
                     >
                       Đặt phòng
                     </button>

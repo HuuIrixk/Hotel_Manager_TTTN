@@ -1,12 +1,12 @@
 
 
-Tên hệ thống: Hotel Manager – New World Saigon Hotel
+Tên hệ thống: Hotel Manager – VAA Hotel
 
 Thông tin khách sạn:
-Tên khách sạn: New World Saigon Hotel
+Tên khách sạn: VAA Hotel
 Địa chỉ: 18A, Cộng Hòa, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam
 Hotline lễ tân: (84-28) 3822 8888
-Email hỗ trợ: Nhom10@newworldsaigon.VAA.com
+Email hỗ trợ: nhom86@vaa.com
 
 Thời gian hoạt động lễ tân: 24/7
 

@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 const SLIDES = [
   {
     src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945',
-    alt: 'New World Saigon Hotel Facade',
-    title: 'New World Saigon Hotel',
+    alt: 'VAA Hotel Facade',
+    title: 'VAA Hotel',
     subtitle: 'Khách sạn 5 sao tại trung tâm Sài Gòn',
   },
   {

@@ -26,7 +26,7 @@ export default function Contact() {
   }
 
   useEffect(() => {
-    document.title = "Liên hệ | New World Saigon Hotel";
+    document.title = "Liên hệ | VAA Hotel";
   }, []);
 
   return (
@@ -40,7 +40,7 @@ export default function Contact() {
         {/* Hero */}
         <section className="relative z-10 text-center pt-32 pb-16 px-6">
           <h1
-            className="text-5xl font-[Playfair_Display] text-amber-400 font-bold drop-shadow-[0_2px_10px_rgba(251,191,36,0.6)]"
+            className="text-5xl font-[Playfair_Display] text-cyan-400 font-bold drop-shadow-[0_2px_10px_rgba(34,211,238,0.6)]"
             data-aos="fade-down"
           >
             Liên hệ với chúng tôi
@@ -50,33 +50,33 @@ export default function Contact() {
             data-aos="fade-up"
           >
             Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7.
-            Hãy để <strong>New World Saigon Hotel</strong> đồng hành cùng trải nghiệm của bạn!
+            Hãy để <strong>VAA Hotel</strong> đồng hành cùng trải nghiệm của bạn!
           </p>
         </section>
 
         {/* Thông tin liên hệ */}
         <section className="relative z-10 container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div
-            className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-amber-400/20 shadow-[0_0_20px_rgba(251,191,36,0.15)]"
+            className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-cyan-400/20 shadow-[0_0_20px_rgba(34,211,238,0.15)]"
             data-aos="fade-right"
           >
             <div className="text-4xl mb-3">
-              <LocationMarkerIcon className="w-10 h-10 text-amber-400 mx-auto" />
+              <LocationMarkerIcon className="w-10 h-10 text-cyan-400 mx-auto" />
             </div>
-            <h3 className="text-amber-400 font-semibold text-lg mb-2">Địa chỉ</h3>
+            <h3 className="text-cyan-400 font-semibold text-lg mb-2">Địa chỉ</h3>
             <a href="https://maps.app.goo.gl/tZLz5JU828HM6a189" target="_blank" rel="noopener noreferrer" className="hover:underline">
               18A Cộng Hòa, Phường 4, Quận Tân Bình, TP. Hồ Chí Minh
             </a>
           </div>
 
           <div
-            className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-amber-400/20 shadow-[0_0_20px_rgba(251,191,36,0.15)]"
+            className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-cyan-400/20 shadow-[0_0_20px_rgba(34,211,238,0.15)]"
             data-aos="fade-up"
           >
             <div className="text-4xl mb-3">
-              <PhoneIcon className="w-10 h-10 text-amber-400 mx-auto" />
+              <PhoneIcon className="w-10 h-10 text-cyan-400 mx-auto" />
             </div>
-            <h3 className="text-amber-400 font-semibold text-lg mb-2">Hotline</h3>
+            <h3 className="text-cyan-400 font-semibold text-lg mb-2">Hotline</h3>
               <a href="tel:+84909888777" className="hover:underline">
                 (+84) 909 888 777
               </a>
@@ -84,11 +84,11 @@ export default function Contact() {
           </div>
 
           <div
-            className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-amber-400/20 shadow-[0_0_20px_rgba(251,191,36,0.15)]"
+            className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-cyan-400/20 shadow-[0_0_20px_rgba(34,211,238,0.15)]"
             data-aos="fade-left"
           >
-            <div className="text-4xl mb-3"><MailIcon className="w-10 h-10 text-amber-400 mx-auto" /></div>
-            <h3 className="text-amber-400 font-semibold text-lg mb-2">Email</h3>
+            <div className="text-4xl mb-3"><MailIcon className="w-10 h-10 text-cyan-400 mx-auto" /></div>
+            <h3 className="text-cyan-400 font-semibold text-lg mb-2">Email</h3>
             <a href="mailto:info@newworldhotel.vn" className="hover:underline">
               info@newworldhotel.vn
             </a>
@@ -101,7 +101,7 @@ export default function Contact() {
           className="relative z-10 container mx-auto px-6 py-16 max-w-2xl text-center"
           data-aos="zoom-in"
         >
-          <h2 className="text-3xl font-[Playfair_Display] text-amber-400 mb-8">
+          <h2 className="text-3xl font-[Playfair_Display] text-cyan-400 mb-8">
             Gửi tin nhắn cho chúng tôi
           </h2>
 
@@ -117,7 +117,7 @@ export default function Contact() {
               <label className="block text-sm mb-1 text-gray-300">Họ và tên</label>
               <input
                 type="text"
-                className="w-full p-3 rounded-lg bg-white/10 border border-amber-400/20 focus:border-amber-400 focus:ring-amber-400 text-white outline-none"
+                className="w-full p-3 rounded-lg bg-white/10 border border-cyan-400/20 focus:border-cyan-400 focus:ring-cyan-400 text-white outline-none"
                 placeholder="Nhập họ tên của bạn..."
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -128,7 +128,7 @@ export default function Contact() {
               <label className="block text-sm mb-1 text-gray-300">Email</label>
               <input
                 type="email"
-                className="w-full p-3 rounded-lg bg-white/10 border border-amber-400/20 focus:border-amber-400 focus:ring-amber-400 text-white outline-none"
+                className="w-full p-3 rounded-lg bg-white/10 border border-cyan-400/20 focus:border-cyan-400 focus:ring-cyan-400 text-white outline-none"
                 placeholder="Địa chỉ email của bạn..."
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -139,7 +139,7 @@ export default function Contact() {
               <label className="block text-sm mb-1 text-gray-300">Nội dung</label>
               <textarea
                 rows={5}
-                className="w-full p-3 rounded-lg bg-white/10 border border-amber-400/20 focus:border-amber-400 focus:ring-amber-400 text-white outline-none"
+                className="w-full p-3 rounded-lg bg-white/10 border border-cyan-400/20 focus:border-cyan-400 focus:ring-cyan-400 text-white outline-none"
                 placeholder="Nhập nội dung tin nhắn..."
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -149,7 +149,7 @@ export default function Contact() {
             <div className="text-center pt-4">
               <button
                 type="submit"
-                className="px-10 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(251,191,36,0.6)] transition-all duration-300"
+                className="px-10 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] transition-all duration-300"
               >
                 Gửi tin nhắn
               </button>
@@ -170,8 +170,8 @@ export default function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full rounded-2xl shadow-[0_0_30px_rgba(251,191,36,0.2)]"
-                  aria-label="Bản đồ vị trí khách sạn New World Saigon Hotel"
+                  className="w-full h-full rounded-2xl shadow-[0_0_30px_rgba(34,211,238,0.2)]"
+                  aria-label="Bản đồ vị trí khách sạn VAA Hotel"
                 ></iframe>
               </div>
             </div>

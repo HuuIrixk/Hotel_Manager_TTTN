@@ -6,7 +6,7 @@ export default function Login() {
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handle = (e) => {
+  const handle = async (e) => {
     e.preventDefault();
     setErr("");
     setLoading(true);
@@ -14,19 +14,19 @@ export default function Login() {
     const username = e.target.username.value.trim();
     const password = e.target.password.value.trim();
 
-    setTimeout(() => {
+    try {
       // login trả về { ok: true/false, message: "" }
-      const res = login(username, password);
-      setLoading(false);
+      const res = await login(username, password);
 
       if (!res.ok) {
-        setErr(res.message);
+        setErr(res.message || "Đăng nhập thất bại");
         return;
       }
 
-      // No role check → vào admin luôn
       window.location.href = "/";
-    }, 500);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

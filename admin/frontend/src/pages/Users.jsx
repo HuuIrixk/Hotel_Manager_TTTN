@@ -6,6 +6,13 @@ export default function Users() {
   const { users, changeUserRole, toggleUserActive } = useAppData();
   const [search, setSearch] = useState("");
 
+  const handleRoleChange = async (userId, role) => {
+    const res = await changeUserRole(userId, role);
+    if (!res?.ok) {
+      alert(res?.message || "Cập nhật role thất bại");
+    }
+  };
+
   const filtered = users.filter((u) => {
     if (!search) return true;
     const lowered = search.toLowerCase();
@@ -53,7 +60,7 @@ export default function Users() {
                   <select
                     className="input"
                     value={u.role}
-                    onChange={(e) => changeUserRole(u.id, e.target.value)}
+                    onChange={(e) => handleRoleChange(u.id, e.target.value)}
                   >
                     <option value="admin">admin</option>
                     <option value="customer">customer</option>

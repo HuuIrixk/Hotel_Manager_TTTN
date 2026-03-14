@@ -21,11 +21,11 @@ export default function Navbar() {
             <Link to="/" className="flex items-center" onClick={closeMenu}>
               <img
                 src="/images/logo.png"
-                alt="New World Saigon Hotel"
+                alt="VAA Hotel"
                 className="h-12 w-auto"
               />
               <div className="ml-3 text-gray-900">
-                <div className="text-lg font-bold leading-none">New World</div>
+                <div className="text-lg font-bold leading-none">VAA Hotel</div>
                 <div className="text-sm">Saigon Hotel</div>
               </div>
             </Link>

@@ -63,7 +63,7 @@ export default function BookingPage() {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    document.title = 'Đặt phòng | New World Saigon Hotel'
+    document.title = 'Đặt phòng | VAA Hotel'
   }, [])
 
   // autofill từ user khi có
@@ -221,7 +221,7 @@ export default function BookingPage() {
                         type="text"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                         placeholder="Nguyễn Văn A"
                       />
                     </div>
@@ -233,7 +233,7 @@ export default function BookingPage() {
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                         placeholder="09xxxxxxxx"
                       />
                     </div>
@@ -248,7 +248,7 @@ export default function BookingPage() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -259,7 +259,7 @@ export default function BookingPage() {
                       <select
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
-                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                       >
                         <option value="1">1 khách</option>
                         <option value="2">2 khách</option>
@@ -278,7 +278,7 @@ export default function BookingPage() {
                         type="date"
                         value={checkIn}
                         onChange={(e) => setCheckIn(e.target.value)}
-                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                       />
                     </div>
                     <div>
@@ -289,7 +289,7 @@ export default function BookingPage() {
                         type="date"
                         value={checkOut}
                         onChange={(e) => setCheckOut(e.target.value)}
-                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                        className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                       />
                     </div>
                   </div>
@@ -302,7 +302,7 @@ export default function BookingPage() {
                       value={note}
                       onChange={(e) => setNote(e.target.value)}
                       rows={3}
-                      className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400 bg-white"
+                      className="w-full text-black border border-slate-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400 bg-white"
                       placeholder="Ví dụ: check-in muộn, yêu cầu giường phụ..."
                     />
                   </div>
@@ -318,7 +318,7 @@ export default function BookingPage() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full md:w-auto px-6 py-2.5 rounded-md bg-amber-500 hover:bg-amber-400 text-sm font-semibold text-black transition disabled:opacity-60"
+                      className="w-full md:w-auto px-6 py-2.5 rounded-md bg-cyan-500 hover:bg-cyan-400 text-sm font-semibold text-black transition disabled:opacity-60"
                     >
                       {submitting ? 'Đang tạo đơn...' : 'Tiếp tục tới thanh toán'}
                     </button>
@@ -393,7 +393,7 @@ export default function BookingPage() {
                         </div>
                         <div className="flex justify-between font-semibold pt-2">
                           <span>Tạm tính</span>
-                          <span className="text-amber-600">
+                          <span className="text-cyan-600">
                             {formatCurrency(estimatedTotal)}
                           </span>
                         </div>

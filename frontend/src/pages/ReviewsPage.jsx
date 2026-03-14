@@ -36,7 +36,7 @@ export default function Reviews() {
   const [newReview, setNewReview] = useState({ name: '', comment: '', rating: 5 })
 
   useEffect(() => {
-    document.title = "Đánh giá | New World Saigon Hotel";
+    document.title = "Đánh giá | VAA Hotel";
   }, []);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Reviews() {
       {/* Hero */}
       <section className="relative z-10 text-center pt-32 pb-20 px-6">
         <h1
-          className="text-5xl font-[Playfair_Display] font-bold text-amber-400 drop-shadow-[0_2px_10px_rgba(251,191,36,0.6)]"
+          className="text-5xl font-[Playfair_Display] font-bold text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.6)]"
           data-aos="fade-down"
         >
           Đánh giá từ khách hàng
@@ -71,7 +71,7 @@ export default function Reviews() {
           data-aos="fade-up"
         >
           Cảm nhận chân thật từ những vị khách đã trải nghiệm tại{' '}
-          <span className="text-amber-400 font-semibold">New World Saigon Hotel</span>.
+          <span className="text-cyan-400 font-semibold">VAA Hotel</span>.
         </p>
       </section>
 
@@ -81,7 +81,7 @@ export default function Reviews() {
           {reviews.map((r, i) => (
             <div
               key={i}
-              className="bg-white/10 backdrop-blur-lg border border-amber-400/20 rounded-2xl p-6 shadow-[0_0_25px_rgba(251,191,36,0.15)] hover:shadow-[0_0_35px_rgba(251,191,36,0.25)] transition-all duration-300"
+              className="bg-white/10 backdrop-blur-lg border border-cyan-400/20 rounded-2xl p-6 shadow-[0_0_25px_rgba(34,211,238,0.15)] hover:shadow-[0_0_35px_rgba(34,211,238,0.25)] transition-all duration-300"
               data-aos="fade-up"
               data-aos-delay={i * 100}
             >
@@ -89,10 +89,10 @@ export default function Reviews() {
                 <img
                   src={r.avatar}
                   alt={r.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-amber-400"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-cyan-400"
                 />
                 <div>
-                  <h3 className="text-amber-400 font-semibold">{r.name}</h3>
+                  <h3 className="text-cyan-400 font-semibold">{r.name}</h3>
                   <p className="text-xs text-gray-400">{r.date}</p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function Reviews() {
                   <svg
                     key={index}
                     className={`w-5 h-5 ${
-                      index < r.rating ? 'text-amber-400' : 'text-gray-500'
+                      index < r.rating ? 'text-cyan-400' : 'text-gray-500'
                     }`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
@@ -118,11 +118,11 @@ export default function Reviews() {
 
       {/* Form gửi đánh giá */}
       <section
-        className="relative z-10 bg-gradient-to-r from-amber-500/10 to-yellow-500/10 backdrop-blur-md py-20 border-t border-amber-400/30"
+        className="relative z-10 bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 backdrop-blur-md py-20 border-t border-cyan-400/30"
         data-aos="fade-up"
       >
         <div className="container mx-auto px-6 text-center max-w-xl">
-          <h2 className="text-3xl font-[Playfair_Display] text-amber-400 mb-6">
+          <h2 className="text-3xl font-[Playfair_Display] text-cyan-400 mb-6">
             Chia sẻ trải nghiệm của bạn
           </h2>
           <form onSubmit={handleSubmit} className="space-y-5 text-left">
@@ -130,7 +130,7 @@ export default function Reviews() {
               <label className="block text-sm mb-1 text-gray-300">Họ và tên</label>
               <input
                 type="text"
-                className="w-full p-3 rounded-lg bg-white/10 border border-amber-400/20 focus:border-amber-400 focus:ring-amber-400 text-white outline-none"
+                className="w-full p-3 rounded-lg bg-white/10 border border-cyan-400/20 focus:border-cyan-400 focus:ring-cyan-400 text-white outline-none"
                 placeholder="Nhập tên của bạn..."
                 value={newReview.name}
                 onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
@@ -139,7 +139,7 @@ export default function Reviews() {
             <div>
               <label className="block text-sm mb-1 text-gray-300">Đánh giá</label>
               <select
-                className="w-full p-3 rounded-lg bg-white/10 border border-amber-400/20 focus:border-amber-400 focus:ring-amber-400 text-white outline-none"
+                className="w-full p-3 rounded-lg bg-white/10 border border-cyan-400/20 focus:border-cyan-400 focus:ring-cyan-400 text-white outline-none"
                 value={newReview.rating}
                 onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
               >
@@ -154,7 +154,7 @@ export default function Reviews() {
               <label className="block text-sm mb-1 text-gray-300">Nhận xét</label>
               <textarea
                 rows={4}
-                className="w-full p-3 rounded-lg bg-white/10 border border-amber-400/20 focus:border-amber-400 focus:ring-amber-400 text-white outline-none"
+                className="w-full p-3 rounded-lg bg-white/10 border border-cyan-400/20 focus:border-cyan-400 focus:ring-cyan-400 text-white outline-none"
                 placeholder="Chia sẻ cảm nhận của bạn..."
                 value={newReview.comment}
                 onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
@@ -163,7 +163,7 @@ export default function Reviews() {
             <div className="text-center pt-4">
               <button
                 type="submit"
-                className="px-10 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(251,191,36,0.6)] transition-all duration-300"
+                className="px-10 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] transition-all duration-300"
               >
                 Gửi đánh giá
               </button>

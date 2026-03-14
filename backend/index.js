@@ -61,10 +61,10 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('Kết nối Supabase PostgreSQL thành công')
-    return sequelize.sync({ alter: true })
+    // Đã dùng migrations thay vì sync
   })
   .then(() => {
-    console.log('Đã đồng bộ CSDL.')
+    console.log('Migrations đã được áp dụng.')
   })
   .catch((err) => console.error('Lỗi DB:', err))
 

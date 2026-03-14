@@ -13,7 +13,7 @@ import { sendChatMessage } from '@/api/chatApi'
 const INITIAL_BOT_MESSAGE = {
   id: 1,
   sender: 'bot',
-  text: 'Xin chào! Mình là trợ lý ảo của New World Saigon Hotel. Bạn cần hỗ trợ gì về đặt phòng, giá phòng hoặc tiện ích khách sạn không?',
+  text: 'Xin chào! Mình là trợ lý ảo của VAA Hotel. Bạn cần hỗ trợ gì về đặt phòng, giá phòng hoặc tiện ích khách sạn không?',
 }
 
 // parse markdown link [text](/booking?...)
@@ -51,7 +51,7 @@ function renderMessageText(raw, onLinkClick) {
           key={parts.length}
           type="button"
           onClick={() => onLinkClick(href)}
-          className="text-amber-500 hover:text-amber-400 underline underline-offset-2"
+          className="text-cyan-500 hover:text-cyan-400 underline underline-offset-2"
         >
           {linkText}
         </button>
@@ -61,7 +61,7 @@ function renderMessageText(raw, onLinkClick) {
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="text-amber-500 hover:text-amber-400 underline underline-offset-2"
+          className="text-cyan-500 hover:text-cyan-400 underline underline-offset-2"
         >
           {linkText}
         </a>
@@ -249,8 +249,8 @@ export default function ChatWidget() {
         className={
           'fixed bottom-4 right-4 z-40 rounded-full px-4 py-2 text-sm font-semibold shadow-lg transition ' +
           (isDark
-            ? 'bg-amber-500 text-black hover:bg-amber-400'
-            : 'bg-amber-500 text-black hover:bg-amber-400')
+            ? 'bg-cyan-500 text-black hover:bg-cyan-400'
+            : 'bg-cyan-500 text-black hover:bg-cyan-400')
         }
       >
         {isOpen ? 'Đóng chat' : 'Chat với lễ tân AI'}
@@ -263,7 +263,7 @@ export default function ChatWidget() {
           <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 bg-slate-900 text-slate-50">
             <div>
               <p className="text-sm font-semibold">
-                Trợ lý AI – New World Saigon
+                Trợ lý AI – VAA Hotel
               </p>
               <p className="text-[11px] text-slate-300">
                 Hỗ trợ đặt phòng, giá, tiện ích 24/7
@@ -305,7 +305,7 @@ export default function ChatWidget() {
                     className={
                       'max-w-[80%] rounded-2xl px-3 py-2 text-sm whitespace-pre-wrap ' +
                       (isUser
-                        ? 'bg-amber-500 text-black rounded-br-sm'
+                        ? 'bg-cyan-500 text-black rounded-br-sm'
                         : 'bg-white text-slate-900 border border-slate-200 rounded-bl-sm')
                     }
                   >
@@ -327,14 +327,14 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="flex-1 resize-none rounded-xl text-black border border-slate-300 px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-amber-400 focus:border-amber-400"
+                className="flex-1 resize-none rounded-xl text-black border border-slate-300 px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-cyan-400 focus:border-cyan-400"
                 placeholder="Nhập câu hỏi của bạn..."
               />
               <button
                 type="button"
                 onClick={handleSend}
                 disabled={sending || !input.trim()}
-                className="px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-xs font-semibold text-black disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-3 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-xs font-semibold text-black disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Gửi
               </button>

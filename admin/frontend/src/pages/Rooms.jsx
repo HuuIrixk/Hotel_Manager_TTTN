@@ -1,12 +1,24 @@
 // src/pages/Rooms.jsx
 import React, { useMemo, useState } from "react";
 import { useAppData } from "../context/AppDataContext";
-import { get, patch, put, del } from "../api/api";
+import { get, patch, put, post, del } from "../api/api";
+
+const ROOM_TYPE_OPTIONS = ["Standard", "VIP", "Suite"];
 
 export default function Rooms() {
   const { rooms, refreshData } = useAppData();
   const [q, setQ] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
+  const [creatingRoom, setCreatingRoom] = useState(false);
+  const [createForm, setCreateForm] = useState({
+    name: "",
+    type: "Standard",
+    price: "",
+    capacity: 2,
+    status: "available",
+    description: "",
+    imageFile: null,
+  });
 
   // Availability Check
   const [fromDate, setFromDate] = useState("");
@@ -86,6 +98,42 @@ export default function Rooms() {
     }
   };
 
+  const createRoom = async () => {
+    try {
+      if (!createForm.name || !createForm.type || !createForm.price) {
+        alert("Vui lòng nhập tên phòng, loại phòng và giá.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("room_number", createForm.name);
+      formData.append("type", createForm.type);
+      formData.append("price", createForm.price);
+      formData.append("capacity", createForm.capacity || 2);
+      formData.append("description", createForm.description || "");
+      formData.append("status", createForm.status || "available");
+
+      if (createForm.imageFile) {
+        formData.append("image", createForm.imageFile);
+      }
+
+      await post("/admin/rooms", formData);
+      setCreatingRoom(false);
+      setCreateForm({
+        name: "",
+        type: "Standard",
+        price: "",
+        capacity: 2,
+        status: "available",
+        description: "",
+        imageFile: null,
+      });
+      refreshData();
+    } catch (e) {
+      alert("Lỗi khi thêm phòng");
+    }
+  };
+
 
   const list = useMemo(() => {
     return rooms.filter((r) => {
@@ -121,7 +169,10 @@ export default function Rooms() {
           </div>
 
           <div style={{ marginLeft: "auto" }}>
-             <button className="btn-accept" onClick={refreshData}>Refresh</button>
+             <div style={{ display: "flex", gap: 8 }}>
+               <button className="btn-accept" onClick={() => setCreatingRoom(true)}>Thêm phòng</button>
+               <button className="btn-accept" onClick={refreshData}>Refresh</button>
+             </div>
           </div>
         </div>
       </div>
@@ -141,9 +192,15 @@ export default function Rooms() {
                 <td>
                   <span style={{
                     fontWeight: 700,
-                    color: r.status === "available" ? "#10b981" : (r.status === "booked" ? "#fbbf24" : "#ef4444")
+                    color: r.status === "available" ? "#10b981" : (r.status === "booked" ? "#facc15" : "#ef4444")
                   }}>
-                    {r.status === "booked" ? "Occupied" : r.status}
+                    {r.status === "booked"
+                      ? "Booked"
+                      : r.status === "available"
+                      ? "Available"
+                      : r.status === "maintenance"
+                      ? "Maintenance"
+                      : r.status}
                   </span>
                 </td>
                 <td>
@@ -200,9 +257,16 @@ export default function Rooms() {
               )}
 
               <label>Tên phòng <input className="input" value={editForm.name} onChange={e => setEditForm({...editForm, name: e.target.value})} /></label>
-              <label>Loại <input className="input" value={editForm.type} onChange={e => setEditForm({...editForm, type: e.target.value})} /></label>
+              <label>Loại
+                <select className="input" value={editForm.type || "Standard"} onChange={e => setEditForm({ ...editForm, type: e.target.value })}>
+                  {ROOM_TYPE_OPTIONS.map((type) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+              </label>
               <label>Giá <input type="number" className="input" value={editForm.price} onChange={e => setEditForm({...editForm, price: e.target.value})} /></label>
               <label>Sức chứa <input type="number" className="input" value={editForm.capacity} onChange={e => setEditForm({...editForm, capacity: e.target.value})} /></label>
+              <label>Mô tả <textarea className="input" value={editForm.description || ""} onChange={e => setEditForm({ ...editForm, description: e.target.value })} /></label>
               <label>Trạng thái
                 <select className="input" value={editForm.status} onChange={e => setEditForm({...editForm, status: e.target.value})}>
                   <option value="available">Available</option>
@@ -214,6 +278,61 @@ export default function Rooms() {
             <div style={{ marginTop: 20, display: "flex", gap: 12, justifyContent: "flex-end" }}>
               <button className="btn-outline" onClick={() => setEditingRoom(null)}>Hủy</button>
               <button className="btn-accept" onClick={saveEdit}>Lưu</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Create Modal */}
+      {creatingRoom && (
+        <div className="modal-overlay">
+          <div className="modal text-black">
+            <h2>Thêm phòng mới</h2>
+            <div style={{ display: "grid", gap: 12 }}>
+              <label>Ảnh phòng
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files[0] || null;
+                    setCreateForm((prev) => ({ ...prev, imageFile: file }));
+                  }}
+                />
+              </label>
+
+              {createForm.imageFile && (
+                <div>
+                  <p>Preview:</p>
+                  <img
+                    src={URL.createObjectURL(createForm.imageFile)}
+                    alt="Room preview"
+                    style={{ width: 200, height: 120, objectFit: "cover", borderRadius: 8 }}
+                  />
+                </div>
+              )}
+
+              <label>Tên phòng <input className="input" value={createForm.name} onChange={e => setCreateForm({ ...createForm, name: e.target.value })} /></label>
+              <label>Loại
+                <select className="input" value={createForm.type} onChange={e => setCreateForm({ ...createForm, type: e.target.value })}>
+                  {ROOM_TYPE_OPTIONS.map((type) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+              </label>
+              <label>Giá <input type="number" className="input" value={createForm.price} onChange={e => setCreateForm({ ...createForm, price: e.target.value })} /></label>
+              <label>Sức chứa <input type="number" className="input" value={createForm.capacity} onChange={e => setCreateForm({ ...createForm, capacity: e.target.value })} /></label>
+              <label>Mô tả <textarea className="input" value={createForm.description} onChange={e => setCreateForm({ ...createForm, description: e.target.value })} /></label>
+              <label>Trạng thái
+                <select className="input" value={createForm.status} onChange={e => setCreateForm({ ...createForm, status: e.target.value })}>
+                  <option value="available">Available</option>
+                  <option value="booked">Booked</option>
+                  <option value="maintenance">Maintenance</option>
+                </select>
+              </label>
+            </div>
+            <div style={{ marginTop: 20, display: "flex", gap: 12, justifyContent: "flex-end" }}>
+              <button className="btn-outline" onClick={() => setCreatingRoom(false)}>Hủy</button>
+              <button className="btn-accept" onClick={createRoom}>Thêm</button>
             </div>
           </div>
         </div>

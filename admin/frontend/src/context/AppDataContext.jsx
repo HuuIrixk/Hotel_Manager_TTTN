@@ -1,6 +1,6 @@
 // src/context/AppDataContext.jsx
 import { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { get } from "../api/api";
+import { get, put } from "../api/api";
 
 const AppDataContext = createContext();
 export const useAppData = () => useContext(AppDataContext);
@@ -28,6 +28,7 @@ export function AppDataProvider({ children }) {
         status: r.status,
         type: r.type,
         capacity: r.capacity,
+        description: r.description || "",
         image: r.image_url || null,
       }));
       setRooms(mappedRooms);
@@ -80,10 +81,21 @@ export function AppDataProvider({ children }) {
   }
 
   // Cập nhật role cho user
-  function changeUserRole(userId, newRole) {
+  async function changeUserRole(userId, newRole) {
+    const previousUsers = users;
+
+    // Optimistic update for fast UI feedback
     setUsers((old) =>
       old.map((u) => (u.id === userId ? { ...u, role: newRole } : u))
     );
+
+    try {
+      await put(`/admin/users/${userId}`, { role: newRole });
+      return { ok: true };
+    } catch (err) {
+      setUsers(previousUsers);
+      return { ok: false, message: err?.response?.data?.error || "Không cập nhật được role" };
+    }
   }
 
   // Approve booking

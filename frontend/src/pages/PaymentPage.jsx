@@ -105,21 +105,21 @@ export default function PaymentPage() {
       <Header />
       <main className="relative z-10 pt-32 pb-24 container mx-auto px-6 flex flex-col items-center">
         <h1
-          className="text-4xl md:text-5xl font-[Playfair_Display] text-amber-400 font-bold mb-8 drop-shadow-[0_2px_10px_rgba(251,191,36,0.5)]"
+          className="text-4xl md:text-5xl font-[Playfair_Display] text-cyan-400 font-bold mb-8 drop-shadow-[0_2px_10px_rgba(34,211,238,0.5)]"
           data-aos="fade-down"
         >
           Thanh toán đặt phòng
         </h1>
 
         <div
-          className="w-full max-w-2xl bg-white/10 backdrop-blur-lg border border-amber-400/20 rounded-2xl p-8 shadow-[0_0_25px_rgba(251,191,36,0.15)]"
+          className="w-full max-w-2xl bg-white/10 backdrop-blur-lg border border-cyan-400/20 rounded-2xl p-8 shadow-[0_0_25px_rgba(34,211,238,0.15)]"
           data-aos="fade-up"
         >
           <div className="mb-8 text-center">
             <p className="text-gray-300">
               Phòng: {room || 'Chưa rõ'} – Mã đặt phòng: {bookingId || 'N/A'}
             </p>
-            <h2 className="text-4xl text-amber-400 font-semibold mt-2">
+            <h2 className="text-4xl text-cyan-400 font-semibold mt-2">
               {formatCurrency(amount)}
             </h2>
             <p className="text-sm text-gray-400 mt-1">
@@ -129,15 +129,15 @@ export default function PaymentPage() {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div data-aos="fade-right">
-              <h3 className="text-lg font-semibold text-amber-400 mb-3">
+              <h3 className="text-lg font-semibold text-cyan-400 mb-3">
                 Chọn phương thức thanh toán:
               </h3>
               <div className="grid grid-cols-1 gap-3">
                 <label
                   className={`flex items-center gap-3 p-4 border rounded-lg cursor-pointer transition-all ${
                     method === 'vnpay'
-                      ? 'bg-amber-400/10 border-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.3)]'
-                      : 'bg-white/5 border-gray-600 hover:border-amber-400/60'
+                      ? 'bg-cyan-400/10 border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.3)]'
+                      : 'bg-white/5 border-gray-600 hover:border-cyan-400/60'
                   }`}
                   onClick={() => setMethod('vnpay')}
                 >
@@ -149,8 +149,8 @@ export default function PaymentPage() {
                 <label
                   className={`flex items-center gap-3 p-4 border rounded-lg cursor-pointer transition-all ${
                     method === 'direct'
-                      ? 'bg-amber-400/10 border-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.3)]'
-                      : 'bg-white/5 border-gray-600 hover:border-amber-400/60'
+                      ? 'bg-cyan-400/10 border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.3)]'
+                      : 'bg-white/5 border-gray-600 hover:border-cyan-400/60'
                   }`}
                   onClick={() => setMethod('direct')}
                 >
@@ -163,10 +163,10 @@ export default function PaymentPage() {
 
             {method === 'vnpay' && (
               <div
-                className="bg-black/30 p-5 rounded-lg border border-amber-400/20"
+                className="bg-black/30 p-5 rounded-lg border border-cyan-400/20"
                 data-aos="zoom-in"
               >
-                <h4 className="text-amber-400 font-semibold mb-2">
+                <h4 className="text-cyan-400 font-semibold mb-2">
                   VNPay - Cổng thanh toán trực tuyến
                 </h4>
                 <p className="text-gray-300 text-sm">
@@ -178,10 +178,10 @@ export default function PaymentPage() {
 
             {method === 'direct' && (
               <div
-                className="bg-black/30 p-5 rounded-lg border border-amber-400/20"
+                className="bg-black/30 p-5 rounded-lg border border-cyan-400/20"
                 data-aos="zoom-in"
               >
-                <h4 className="text-amber-400 font-semibold mb-2">
+                <h4 className="text-cyan-400 font-semibold mb-2">
                   Thanh toán trực tiếp tại khách sạn
                 </h4>
                 <p className="text-gray-300 text-sm">
@@ -207,7 +207,7 @@ export default function PaymentPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-10 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(251,191,36,0.6)] transition-all duration-300 disabled:opacity-60"
+                className="px-10 py-3 bg-gradient-to-r from-cyan-400 to-cyan-500 text-black font-semibold rounded-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] transition-all duration-300 disabled:opacity-60"
               >
                 {loading
                   ? 'Đang xử lý...'

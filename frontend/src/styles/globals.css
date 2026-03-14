@@ -238,7 +238,7 @@ nav a::after {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background-color: #fbbf24; /* amber-400 */
+  background-color: #22d3ee; /* cyan-400 */
   transition: width 0.3s ease-in-out;
 }
 
@@ -254,7 +254,7 @@ input::placeholder {
 }
 
 input:focus {
-  box-shadow: 0 0 10px #fbbf24;
+  box-shadow: 0 0 10px #22d3ee;
 }
 
 button:disabled {
